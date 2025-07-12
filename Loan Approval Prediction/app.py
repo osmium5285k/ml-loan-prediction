@@ -1,7 +1,7 @@
 import streamlit as st
 import pandas as pd
 import pickle as pk
-#nocapmenogayasf
+
 model = pk.load(open('model.pkl','rb'))
 scaler = pk.load(open('scaler.pkl','rb'))
 
@@ -25,7 +25,7 @@ if self_emp =='No':
     emp_s =0
 else:
     emp_s = 1
-#nocapmenogayasf
+
 if st.button("Predict"):
     pred_data = pd.DataFrame([[no_of_dep,grad_s,emp_s,Annual_Income,Loan_Amount,Loan_Dur,Cibil,Assets]],
                          columns=['no_of_dependents','education','self_employed','income_annum','loan_amount','loan_term','cibil_score','Assets'])
@@ -35,4 +35,4 @@ if st.button("Predict"):
         st.markdown('Loan Is Approved')
     else:
         st.markdown('Loan Is Rejected')
-#nocapmenogayasf
+
